@@ -11,4 +11,8 @@
 .card.flipped {
   transform: rotateY(180deg);
 }
-  
+
+.custom-container {
+  width: 30%; 
+  margin: 0 auto; 
+}

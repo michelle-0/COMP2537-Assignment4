@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Button, Container, Box, Typography} from "@mui/material";
+import { Button, Container, Box, Typography, Switch} from "@mui/material";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -43,6 +43,10 @@ export default function Home() {
   const [gameStarted, setGameStarted] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
+  const handleThemeChange = () => {
+    setDarkMode(!darkMode);
+  };
+
   const handleStart = () => {
     setGameStarted(true);
   };
@@ -81,14 +85,13 @@ export default function Home() {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        minHeight="100vh"
         py={2}
         sx={{ mt: 8 }}
       >
-        <Typography variant="h3" gutterBottom>
-          Welcome to the Pokemon Memory Game
-        </Typography>
-
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Typography sx={{ mr: 1 }}>Dark Mode</Typography>
+          <Switch checked={darkMode} onChange={handleThemeChange} />
+        </Box>
         {!gameStarted && (
           <Box sx={{ my: 2 }}>
             <FormControl>
