@@ -1,0 +1,14 @@
+.card {
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  position: relative;
+  transform-origin: center;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+  
+.card.flipped {
+  transform: rotateY(180deg);
+}
+  
